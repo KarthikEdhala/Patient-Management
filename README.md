@@ -1,47 +1,38 @@
-🏥 Patient Management System – Microservices with Spring Boot
+# 🏥 Patient Management System – Microservices with Spring Boot
 
-This project is a microservices-based patient management system built using Java, Spring Boot, gRPC, Apache Kafka, PostgreSQL, and Docker.
-It demonstrates how to design and implement a secure, event-driven, distributed system with modern Spring technologies.
+A microservices-based patient management system built using Java, Spring Boot, gRPC, Apache Kafka, PostgreSQL, and Docker. This project demonstrates how to design and implement a secure, event-driven, distributed system with modern Spring technologies.
 
-🔹 What I Implemented
+## 🔹 What I Implemented
 
-Microservices Architecture – Each service is independent and focused on a single responsibility.
+**Microservices Architecture** – Each service is independent and focused on a single responsibility.
 
-Patient Service – Handles core patient data management with PostgreSQL.
+- **Patient Service** – Handles core patient data management with PostgreSQL.
+- **Billing Service** – Communicates via gRPC for efficient inter-service calls.
+- **Notification Service** – Listens to Kafka topics and sends notifications asynchronously.
+- **Auth Service** – Provides authentication and authorization using Spring Security + JWT.
+- **API Gateway** – Built with Spring Cloud Gateway, routing requests securely after JWT validation.
 
-Billing Service – Communicates via gRPC for efficient inter-service calls.
+## 🔹 Key Highlights
 
-Notification Service – Listens to Kafka topics and sends notifications asynchronously.
+- **Designed a secure request flow:**
+  ```
+  Browser → API Gateway → JWT Validation → Target Microservice
+  ```
 
-Auth Service – Provides authentication and authorization using Spring Security + JWT.
+- **Used Kafka as a message broker** to enable event-driven communication.
 
-API Gateway – Built with Spring Cloud Gateway, routing requests securely after JWT validation.
+- **Integrated gRPC** for fast, lightweight inter-service communication.
 
-🔹 Key Highlights
+- **Implemented JWT authentication** to secure APIs across services.
 
-Designed a secure request flow:
-Browser → API Gateway → JWT Validation → Target Microservice
+- **Containerized each service individually** with Docker for portability and consistency.
 
-Used Kafka as a message broker to enable event-driven communication.
+## 🔹 Tech Stack
 
-Integrated gRPC for fast, lightweight inter-service communication.
-
-Implemented JWT authentication to secure APIs across services.
-
-Containerized each service individually with Docker for portability and consistency.
-
-🔹 Tech Stack
-
-Java 17 / Spring Boot
-
-Spring Cloud Gateway (API Gateway)
-
-gRPC for service-to-service communication
-
-Apache Kafka for asynchronous messaging
-
-Spring Security + JWT for authentication & authorization
-
-PostgreSQL as database
-
-Docker for containerization
+- **Java 17** / **Spring Boot**
+- **Spring Cloud Gateway** (API Gateway)
+- **gRPC** for service-to-service communication
+- **Apache Kafka** for asynchronous messaging
+- **Spring Security + JWT** for authentication & authorization
+- **PostgreSQL** as database
+- **Docker** for containerization
